@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Form</title>
+</head>
+<body>
+    <h2>Submit user Details</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <br><br>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    <h2>stored users data</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {% for entry in entries %}
+        <tr>
+            <td>{{ entry[0] }}</td>
+            <td>{{ entry[1] }}</td>
+            <td>{{ entry[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
